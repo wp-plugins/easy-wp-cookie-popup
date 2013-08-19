@@ -1,5 +1,5 @@
 === Wordpress Cookies Popup ===
-Contributors: John Peden
+Contributors: jcpeden
 Donate link: http://www.wpbackitup.com
 Tags: cookie, cookies, cookie law, cookie popup, cookie notification
 Requires at least: 3.5.2
