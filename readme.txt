@@ -10,6 +10,7 @@ Easy Wordpress Cookies Popup displays a customised, and translatable, popup noti
 
 == Description ==
 
+= Display A Cookie Notification Popup on Your Wordpress Site =
 Easy Wordpress Cookies Popup displays a fully-customised popup that notifies new visitors to your website that it uses cookies. This is great for those sites who now have to comply with the EU Cookie Law. Additionally, for those sites that want to use a simple, lightweight system to display a warning that the site uses cookies, Easy Wordpress Cookies Popup is a handy tool that is both easy to use and feature-full.
 
 = Only Display To New Visitors =
@@ -17,6 +18,12 @@ Easy Wordpress Cookies Popup displays its notification only to new visitors to y
 
 = Translate Your Wordpress Cookie Notification Message =
 Easy Wordpress Cookies Popup allows you to translate your cookies notification message into as many languages as your choose. At the moment, the plugin is only compatible with <a href="http://wpml.org/">WPML</a> but there is no better multi-language system you can use on your site. Simply install both plugins, activate them both and you'll instantly see how to offer your cookie notification in every language you offer your content in. Easy!
+
+== Screenshots ==
+1. If WPML is installed, Easy WordPress Cookies Popup will display options for each of your configured languages.
+2. Easy WordPress Cookies Popup showing the customised cookie popup message displaying in English.
+3. Easy WordPress Cookies Popup showing the customised cookie popup message displaying in French.
+4. Easy WordPress Cookies Popup showing the customised cookie popup message displaying in Japanese.
 
 == Installation ==
 
