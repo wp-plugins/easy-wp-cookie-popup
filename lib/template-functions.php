@@ -17,26 +17,29 @@ function cookie_popup() {
 		$position = 'top';
 	} else {
 		$position = 'bottom';
-	}
-	echo '<div id="eu-cookie" class="' .$position .'">';
-	echo '<div class="close-icon"><a href="#" id="closecookie" alt="Close"><img src="' .WPCOOKIES_URLPATH . "/images/close.png" .'" /></a></div>';
-	if ( !function_exists ('icl_get_languages') ) {
-		echo '<h3>' .addslashes($WPCookies->get_option( 'title' )) .'</h3>';
-		echo '<p>' .addslashes($WPCookies->get_option( 'message' )) .'</p>';
-	} else {
-		$languages = icl_get_languages('skip_missing=0&orderby=code');
-		if( !empty( $languages ) ) {
-			foreach ($languages as $l) {
-				if($l['active']) {
-					$id = $l['language_code'];
-					echo '<h3>' .addslashes($WPCookies->get_option( 'title_lang_' .$id )) .'</h3>';
-					echo '<p>' .addslashes($WPCookies->get_option( 'message_lang_' .$id )) .'</p>';
+	} ?>
+	<div id="eu-cookie" class="<?php echo $position; ?>">
+		<div class="close-icon">
+			<a href="#" id="closecookie" alt="Close"><img src="<?php echo WPCOOKIES_URLPATH; ?>/images/close.png" /></a>
+		</div>
+		<?php if ( !function_exists ('icl_get_languages') ) { ?>
+			<h3><?php echo ($WPCookies->get_option( 'title' )); ?></h3>
+			<p><?php echo ($WPCookies->get_option( 'message' )); ?></p>
+		<?php } else {
+			$languages = icl_get_languages('skip_missing=0&orderby=code');
+			if( !empty( $languages ) ) {
+				foreach ($languages as $l) {
+					if($l['active']) {
+						$id = $l['language_code']; ?>
+						<h3><?php echo ($WPCookies->get_option( 'title_lang_' .$id )); ?></h3>
+						<p><?php echo ($WPCookies->get_option( 'message_lang_' .$id )); ?></p>
+					<?php }
 				}
-			}
-        }
-    }
-	echo '</div></div>';
-}
+	        }
+	    } ?>
+		</div>
+	</div>
+<?php }
 add_action('wp_footer', 'cookie_popup');
 
 function scripts() {
@@ -51,10 +54,22 @@ function styles() {
 }
 add_action('wp_enqueue_scripts','styles');
 
-//load presstrends
-function webtrends_load_presstrends() {
-	global $EasyWebtrends;
-	if($EasyWebtrends->get_option( 'presstrends' ) == 'enabled') {
+/**
+	* Load Presstrends tracking code 
+	* 
+	* @uses wp_get_theme()
+	* @uses get_theme_data()
+	* @uses get_stylesheet_directory()
+	* @uses get_plugins()
+	* @uses get_plugin_data()
+	* @uses wp_remote_get()
+	* @uses set_transient()
+	*
+*/
+
+function cookies_load_presstrends() {
+	global $WPCookies;
+	if($WPCookies->get_option( 'presstrends' ) == 'enabled') {
 		// PressTrends Account API Key
 		$api_key = 'rwiyhqfp7eioeh62h6t3ulvcghn2q8cr7j5x';
 		$auth    = '13xmuig5z9cxijdepezqd8i8nh2nqllx6';
@@ -111,4 +126,4 @@ function webtrends_load_presstrends() {
 		}
 	}
 }
-add_action('admin_init', 'webtrends_load_presstrends');
+add_action('admin_init', 'cookies_load_presstrends' );

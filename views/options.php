@@ -47,6 +47,7 @@
             <p><input type="text" name="data[title]" value="<?php echo ($this->get_option( 'title' )); ?>" /></p>
             
             <h3><?php _e('Message', $namespace); ?></h3>
+            <p><em><?php _e('This box accepts HTML', $namespace); ?>.</em></p>
             <p><textarea columns='22' rows='10' name="data[message]"><?php echo ($this->get_option( 'message' ) ); ?></textarea></p>
         
         <?php } else { 
