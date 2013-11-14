@@ -3,7 +3,7 @@
 Plugin Name: Easy Wordpress Cookies Popup
 Plugin URI: http://www.wpbackitup.com/plugins/wordpress-cookies-popup
 Description: Display a popup notification that your Wordpress site uses cookies.
-Version: 1.0.2
+Version: 1.0.3
 Author: John Peden
 Author URI: http://www.johncpeden.com
 License: GPL3
@@ -188,7 +188,7 @@ class WPCookies {
         $page_title = $this->friendly_name . ' Options';
         $namespace = $this->namespace;
         
-        include( WPCOOKIES_DIRNAME . "/views/options.php" );
+        include( "views/options.php" );
     }
     
     /**
@@ -264,7 +264,7 @@ class WPCookies {
      * @param string $file The name of the file being processed in the filter
      */
     function plugin_action_links( $links, $file ) {
-        if( $file == plugin_basename( WPCOOKIES_DIRNAME . '/' . basename( __FILE__ ) ) ) {
+        if( $file == plugin_basename( WPCOOKIES_PATH . '/' . basename( __FILE__ ) ) ) {
             $old_links = $links;
             $new_links = array(
                 "settings" => '<a href="options-general.php?page=' . $this->namespace . '">' . __( 'Settings' ) . '</a>'
@@ -314,8 +314,8 @@ class WPCookies {
      */
     function wp_register_scripts() {
         // Admin JavaScript
-        wp_register_script( "{$this->namespace}-admin", WPCOOKIES_URLPATH . "/js/admin.js", array( 'jquery' ), $this->version, true );
-        wp_register_script( "{$this->namespace}-popup", WPCOOKIES_URLPATH . "/js/popup.js", array( 'jquery' ), $this->version, true );
+        wp_register_script( "{$this->namespace}-admin", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.js' ), array( 'jquery' ), $this->version, true );
+        wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.js' ), array( 'jquery' ), $this->version, true );
     }
     
     /**
@@ -325,8 +325,8 @@ class WPCookies {
      */
     function wp_register_styles() {
         // Admin Stylesheet
-        wp_register_style( "{$this->namespace}-admin", WPCOOKIES_URLPATH . "/css/admin.css", array(), $this->version, 'screen' );
-        wp_register_style( "{$this->namespace}-popup", WPCOOKIES_URLPATH . "/css/popup.css", array(), $this->version, 'screen' );
+        wp_register_style( "{$this->namespace}-admin", plugins_url( WPCOOKIES_DIRNAME . '/css/admin.css' ), array(), $this->version, 'screen' );
+        wp_register_style( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/css/admin.css' ), array(), $this->version, 'screen' );
     }
 }
 if( !isset( $WPCookies ) ) {

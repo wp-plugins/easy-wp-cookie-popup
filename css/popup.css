@@ -9,7 +9,7 @@
 #eu-cookie {
 	background: #000;
 	background: rgba(0,0,0,0.8);
-	display: none;
+	/*display: none;*/
 	color: #fff;
 	padding: 15px 20px;
 	position: fixed;

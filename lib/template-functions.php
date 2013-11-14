@@ -7,7 +7,7 @@
  * @package WordpressCookies
  * 
  * @author jcpeden
- * @version 1.0.0
+ * @version 1.0.3
  * @since 1.0.0
  */
 
