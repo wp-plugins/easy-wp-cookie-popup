@@ -36,8 +36,7 @@ class WPCookies {
     var $defaults = array(
         'title' => "Cookies",
         'message' => "This website uses cookies: By continuing to browse this site you accept this policy.",
-        'position' => "bottom",
-        'presstrends' => "enabled"
+        'position' => "bottom"
     );
     
     /**

@@ -1,7 +1,7 @@
 /**
  * Wordpress Cookies Popup Stylesheet
  * 
- * @version 1.0.5
+ * @version 1.0.7
  * @since 1.0.0
  */
 
@@ -9,7 +9,7 @@
 #eu-cookie {
 	background: #000;
 	background: rgba(0,0,0,0.8);
-	display: none;
+	/*display: none;*/
 	color: #fff;
 	padding: 15px 20px;
 	position: fixed;
@@ -40,8 +40,12 @@
 	padding-top: 0;
 }
 
-#eu-cookie p {
-	font-size: 0.9em;
+#eu-cookie a {
+	color: #4279a6;
+}
+
+#eu-cookie a:hover {
+	color: #b2d9ff;
 }
 
 #eu-cookie .close-icon {
