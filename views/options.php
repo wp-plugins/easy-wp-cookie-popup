@@ -2,7 +2,7 @@
 <div class="wrap">
     <div id="icon-themes" class="icon32"></div>
     <h2><?php echo $page_title; ?></h2>
-
+    
     <?php //Load WPML translations if they exist
     if ( function_exists ('icl_get_languages') ) {
         $languages = icl_get_languages('skip_missing=0&orderby=code');
@@ -80,15 +80,6 @@
         <div class="widget">
             <h2 class="promo"><?php _e('Need support?', $namespace); ?></h2>
             <p><?php _e('If you are having problems with this plugin please talk about them in the', $namespace); ?> <a href="http://wordpress.org/support/plugin/wordpress-cookies"><?php _e('support forum', $namespace); ?></a>.</p>
-        </div>
-        <div class="widget">
-            <h2 class="promo"><?php _e('Presstrends', $namespace); ?></h3>
-                <p><?php _e('Help to improve Wordpress Cookies by enabling', $namespace); ?> <a href="http://www.presstrends.io" target="_blank">Presstrends</a>.</p>
-            <p><input type="radio" name="data[presstrends]" value="enabled" <?php if($this->get_option( 'presstrends' ) == 'enabled') echo 'checked'; ?>> <label><?php _e('Enable', $namespace); ?></label></p>
-            <p><input type="radio" name="data[presstrends]" value="disabled" <?php if($this->get_option( 'presstrends' ) == 'disabled') echo 'checked'; ?>> <label><?php _e('Disable', $namespace); ?></label></p>
-            <p class="submit">
-            <input type="submit" name="Submit" class="button-primary" value="<?php _e( "Save Changes", $namespace ) ?>" />
-        </p>
         </div>
     </div>
     </form>

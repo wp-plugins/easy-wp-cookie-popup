@@ -3,7 +3,7 @@
 Plugin Name: Easy Wordpress Cookies Popup
 Plugin URI: http://www.wpbackitup.com/plugins/wordpress-cookies-popup
 Description: Display a popup notification that your Wordpress site uses cookies.
-Version: 1.0.4
+Version: 1.0.5
 Author: John Peden
 Author URI: http://www.johncpeden.com
 License: GPL3
@@ -52,7 +52,7 @@ class WPCookies {
         $this->option_name = '_' . $this->namespace . '--options';
         
         // Load all library files used by this plugin
-        $libs = glob( WPCOOKIES_DIRNAME . '/lib/*.php' );
+        $libs = glob( WPCOOKIES_PATH . '/lib/*.php' );
         foreach( $libs as $lib ) {
             include_once( $lib );
         }
@@ -75,14 +75,19 @@ class WPCookies {
     private function _add_hooks() {
         // Options page for configuration
         add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
+
         // Route requests for form processing
         add_action( 'init', array( &$this, 'route' ) );
+
+        // Load popup
+        add_action( 'init', array( &$this, 'load_popup' ) );
         
         // Add a settings link next to the "Deactivate" link on the plugin listing page
         add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
         
         // Register all JavaScripts for this plugin
         add_action( 'init', array( &$this, 'wp_register_scripts' ), 1 );
+
         // Register all Stylesheets for this plugin
         add_action( 'init', array( &$this, 'wp_register_styles' ), 1 );
     }
@@ -172,7 +177,11 @@ class WPCookies {
         add_action( 'admin_print_scripts-' . $page_hook, array( &$this, 'admin_print_scripts' ) );
         add_action( 'admin_print_styles-' . $page_hook, array( &$this, 'admin_print_styles' ) );
     }
-    
+
+    function load_popup() {
+        add_action( 'wp_enqueue_scripts', array( &$this, 'load_scripts' ) );
+        add_action( 'wp_enqueue_scripts', array( &$this, 'load_styles' ) );
+    }
     
     /**
      * The admin section options page rendering method
@@ -197,7 +206,7 @@ class WPCookies {
      * @uses wp_enqueue_script()
      */
     function admin_print_scripts() {
-        wp_enqueue_script( "{$this->namespace}-admin" );
+        wp_enqueue_script( "{$this->namespace}-popup" );
     }
     
     /**
@@ -206,7 +215,15 @@ class WPCookies {
      * @uses wp_enqueue_style()
      */
     function admin_print_styles() {
-        wp_enqueue_style( "{$this->namespace}-admin" );
+        wp_enqueue_style( "{$this->namespace}-admin" );    
+    }
+
+    function load_scripts() {
+        wp_enqueue_script( "{$this->namespace}-popup" );
+    }
+
+    function load_styles() {
+        wp_enqueue_style( "{$this->namespace}-popup" );
     }
     
     /**
@@ -313,8 +330,6 @@ class WPCookies {
      * @uses wp_register_script()
      */
     function wp_register_scripts() {
-        // Admin JavaScript
-        wp_register_script( "{$this->namespace}-admin", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.js' ), array( 'jquery' ), $this->version, true );
         wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.js' ), array( 'jquery' ), $this->version, true );
     }
     
@@ -324,9 +339,10 @@ class WPCookies {
      * @uses wp_register_style()
      */
     function wp_register_styles() {
-        // Admin Stylesheet
-        wp_register_style( "{$this->namespace}-admin", plugins_url( WPCOOKIES_DIRNAME . '/css/admin.css' ), array(), $this->version, 'screen' );
-        wp_register_style( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/css/admin.css' ), array(), $this->version, 'screen' );
+        if( is_admin () ) {
+            wp_register_style( "{$this->namespace}-admin", plugins_url( WPCOOKIES_DIRNAME . '/css/admin.css' ), array(), $this->version, 'screen' );    
+        } 
+        wp_register_style( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/css/popup.css' ), array(), $this->version, 'screen' );    
     }
 }
 if( !isset( $WPCookies ) ) {
