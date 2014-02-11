@@ -7,7 +7,7 @@
  * @package WordpressCookies
  * 
  * @author jcpeden
- * @version 1.0.7
+ * @version 1.0.8
  * @since 1.0.0
  */
 
@@ -25,9 +25,7 @@ function cookie_popup() {
 		/* If WPML is inactive, load default popup */
 		if ( !function_exists ('icl_get_languages') ) { ?>
 			<div id="eu-cookie" class="<?php echo $position; ?>">
-				<div class="close-icon">
-					<a href="javascript:void(0)" id="closecookie"><span>close cookie popup<span></a>
-				</div>
+				<a href="javascript:void(0)" class="close-icon">X<span>Close cookie popup</span></a>
 				<h3><?php echo ($WPCookies->get_option( 'title' )); ?></h3>
 				<p><?php echo ($WPCookies->get_option( 'message' )); ?></p>
 			</div>
@@ -44,7 +42,7 @@ function cookie_popup() {
 						if ($WPCookies->get_option( 'disable_lang_' .$id ) == 1) { ?>
 							<div id="eu-cookie" class="<?php echo $position; ?>">
 								<div class="close-icon">
-									<a href="javascript:void(0)" id="closecookie"><span>close cookie popup<span></a>
+									<a href="javascript:void(0)" class="close-icon">X<span>Close cookie popup</span></a>
 								</div>
 								<h3><?php echo ($WPCookies->get_option( 'title_lang_' .$id )); ?></h3>
 								<p><?php echo ($WPCookies->get_option( 'message_lang_' .$id )); ?></p>
