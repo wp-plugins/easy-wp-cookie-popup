@@ -5,19 +5,16 @@
  * @since 1.0.0
  */
 
-(function($){
+(function($){	
 
 /* Check document cookie, do nothing if cookie shows user has visited before (in last 15 days) */
-if (document.cookie.indexOf('visited=true') == -1) {
+if( $.cookie("visited") != 'true' ) {
 	
 	/* Disply the cookie message */
 	$('#eu-cookie').show("fast");
 	
 	/* Set popup not to display if user visited the site in the last 15 days */
-	var fifteenDays = 1000*60*60*24*15;
-	var expires = new Date((new Date()).valueOf() + fifteenDays);
-	document.cookie = "visited=true;expires=" + expires.toUTCString();
-
+	$.cookie('visited', 'true', { expires: 15, path: '/' }); //cookie to be valid for entire site
 
 	/* Allow user to close cookie popup */
 	$('.close-icon a').click(function() {
