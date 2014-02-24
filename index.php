@@ -3,7 +3,7 @@
 Plugin Name: Easy Wordpress Cookies Popup
 Plugin URI: http://www.wpbackitup.com/plugins/wordpress-cookies-popup
 Description: Display a popup notification that your Wordpress site uses cookies.
-Version: 1.0.9
+Version: 1.2
 Author: John Peden
 Author URI: http://www.johncpeden.com
 License: GPL3
@@ -329,8 +329,14 @@ class WPCookies {
      * @uses wp_register_script()
      */
     function wp_register_scripts() {
-        wp_register_script( "jquery-cookies", plugins_url( WPCOOKIES_DIRNAME . '/js/jquery.cookie.js' ), array( 'jquery' ), '1.4.0', true );
-        wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.js' ), array( 'jquery', 'jquery-cookies' ), $this->version, true );
+        /* Easy Wordpress Cookies Popup uses the jQuery Cookie Plugin (https://github.com/carhartl/jquery-cookie) by Klaus Hartl */
+        wp_register_script( "jquery-cookies", plugins_url( WPCOOKIES_DIRNAME . '/js/jquery.cookie.min.js' ), array( 'jquery' ), '1.4.0', true );
+
+        /* Production */
+        //wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.min.js' ), array( 'jquery', 'jquery-cookies' ), $this->version, true );
+
+        /* Development */
+        wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.min.js' ), array( 'jquery', 'jquery-cookies' ), $this->version, true );
     }
     
     /**

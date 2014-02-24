@@ -4,7 +4,7 @@ Donate link: http://www.wpbackitup.com
 Tags: cookie, cookies, cookie law, cookie popup, cookie notification
 Requires at least: 3.5.2
 Tested up to: 3.8.1
-Stable tag: 1.0.9
+Stable tag: 1.2
 
 Easy Wordpress Cookies Popup displays a customised, and translatable, popup notifying new visitors that your site uses cookies.
 
@@ -18,6 +18,9 @@ Easy Wordpress Cookies Popup displays its notification only to new visitors to y
 
 = Translate Your Wordpress Cookie Notification Message =
 Easy Wordpress Cookies Popup allows you to translate your cookies notification message into as many languages as your choose. At the moment, the plugin is only compatible with <a href="http://wpml.org/">WPML</a> but there is no better multi-language system you can use on your site. Simply install both plugins, activate them both and you'll instantly see how to offer your cookie notification in every language you offer your content in. Easy!
+
+<em>Easy Wordpress Cookies Popup uses the <a href="https://github.com/carhartl/jquery-cookie">jQuery Cookie Plugin v1.4.0</a> by Klaus Hartl</em>.
+
 
 == Screenshots ==
 1. If WPML is installed, Easy WordPress Cookies Popup will display options for each of your configured languages.
@@ -37,6 +40,12 @@ The plugin is simple to install:
 1. Customise the position, title and cookie notification message for your Wordpress site.
 
 == Changelog ==
+
+= 1.2 =
+* Fixed issue with close button and escape button not closing popup.
+
+= 1.1 =
+* Fixed issue with close button not working.
 
 = 1.0.9 =
 * Updated cookies library and fixed closing bug in Firefox and Safari.
