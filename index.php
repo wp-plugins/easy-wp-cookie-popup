@@ -3,7 +3,7 @@
 Plugin Name: Easy Wordpress Cookies Popup
 Plugin URI: http://www.wpbackitup.com/plugins/wordpress-cookies-popup
 Description: Display a popup notification that your Wordpress site uses cookies.
-Version: 1.2
+Version: 1.2.1
 Author: John Peden
 Author URI: http://www.johncpeden.com
 License: GPL3
