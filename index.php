@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Easy Wordpress Cookies Popup
-Plugin URI: http://www.wpbackitup.com/plugins/wordpress-cookies-popup
+Plugin URI: http://www.johncpeden.com/plugins/easy-wordpress-cookies-popup
 Description: Display a popup notification that your Wordpress site uses cookies.
-Version: 1.2.1
+Version: 1.3.0
 Author: John Peden
 Author URI: http://www.johncpeden.com
 License: GPL3
@@ -223,6 +223,7 @@ class WPCookies {
 
     function load_styles() {
         wp_enqueue_style( "{$this->namespace}-popup" );
+        wp_enqueue_style( "{$this->namespace}-fontawesome" );
     }
     
     /**
@@ -333,7 +334,7 @@ class WPCookies {
         wp_register_script( "jquery-cookies", plugins_url( WPCOOKIES_DIRNAME . '/js/jquery.cookie.min.js' ), array( 'jquery' ), '1.4.0', true );
 
         /* Production */
-        //wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.min.js' ), array( 'jquery', 'jquery-cookies' ), $this->version, true );
+        //wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.js' ), array( 'jquery', 'jquery-cookies' ), $this->version, true );
 
         /* Development */
         wp_register_script( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/js/popup.min.js' ), array( 'jquery', 'jquery-cookies' ), $this->version, true );
@@ -348,6 +349,7 @@ class WPCookies {
         if( is_admin () ) {
             wp_register_style( "{$this->namespace}-admin", plugins_url( WPCOOKIES_DIRNAME . '/css/admin.css' ), array(), $this->version, 'screen' );    
         } 
+        wp_register_style( "{$this->namespace}-fontawesome", "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", array(), $this->version, 'screen' );    
         wp_register_style( "{$this->namespace}-popup", plugins_url( WPCOOKIES_DIRNAME . '/css/popup.css' ), array(), $this->version, 'screen' );    
     }
 }

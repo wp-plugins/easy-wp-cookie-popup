@@ -1,0 +1,79 @@
+/**
+ * Wordpress Cookies Popup Stylesheet
+ * 
+ * @version 1.2
+ * @since 1.0.0
+ */
+
+
+#eu-cookie {
+	background: #000;
+	background: rgba(0,0,0,0.8);
+	display: none;
+	color: #fff;
+	padding: 15px 20px;
+	position: fixed;
+		right: 7%;
+		left: 7%;
+	z-index: 3000;
+	-webkit-transform: translateZ(0);
+
+	&.top {
+		top: 0;
+		-moz-border-radius: 0px 0px 5px 5px;
+		-webkit-border-radius: 0px 0px 5px 5px;
+		border-radius: 0px 0px 5px 5px;
+	}
+
+	&.bottom {
+		bottom: 0;
+		-moz-border-radius: 5px 5px 0px 0px;
+		-webkit-border-radius: 5px 5px 0px 0px;
+		border-radius: 5px 5px 0px 0px;
+	}
+
+	h3, p {
+		border: none;
+		color: #fff;
+	}
+
+	h3 {padding-top: 0;}
+
+	a {
+		color: #4279a6;
+
+		&:hover {color: #b2d9ff;}
+
+		&.close-icon {
+			float: right;
+
+			.fa {
+				background: #fff;
+				padding: 3px 4px;
+				border-radius: 16px;
+			}
+
+			&:hover {
+				color: #529BD6;
+				text-decoration: none;
+			}
+
+			span {
+				display: none;
+				height: 0;
+				visibility: none;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 730px) {
+		right: 0;
+		left: 0;
+
+		&.top, &.bottom {
+			-moz-border-radius: 0;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+		}
+	}
+}

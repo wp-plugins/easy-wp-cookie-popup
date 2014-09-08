@@ -1,7 +1,7 @@
 /**
  * Admin Control Panel JavaScripts
  * 
- * @version 1.1.1
+ * @version 1.3.0
  * @since 1.0.0
  */
 
@@ -17,6 +17,8 @@ if( $.cookie("visited") != 'true' ) {
 	/* Set popup not to display if user visited the site in the last 15 days */
 	$.cookie('visited', 'true', { expires: 15, path: '/' }); //cookie to be valid for entire site
 }
+
+$('#eu-cookie').show("fast");
 
 /* Allow user to close cookie popup */
 $('a.close-icon').click(function() {

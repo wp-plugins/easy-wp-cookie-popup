@@ -7,7 +7,7 @@
  * @package WordpressCookies
  * 
  * @author jcpeden
- * @version 1.2
+ * @version 1.3.0
  * @since 1.0.0
  */
 
@@ -25,7 +25,7 @@ function cookie_popup() {
 		/* If WPML is inactive, load default popup */
 		if ( !function_exists ('icl_get_languages') ) { ?>
 			<div id="eu-cookie" class="<?php echo $position; ?>">
-				<a href="javascript:void(0)" class="close-icon">X<span>Close cookie popup</span></a>
+				<a href="javascript:void(0)" class="close-icon"><i class="fa fa-times"></i><span>Close cookie popup</span></a>
 				<h3><?php echo ($WPCookies->get_option( 'title' )); ?></h3>
 				<p><?php echo ($WPCookies->get_option( 'message' )); ?></p>
 			</div>
