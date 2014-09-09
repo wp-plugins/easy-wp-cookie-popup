@@ -5,12 +5,12 @@
  * @package WPCOOKIES
  * 
  * @author jcpeden
- * @version 1.3.0
+ * @version 1.4.0
  * @since 1.0.0
  */
 
 /* The current version of this plugin */
-if( !defined( 'WPCOOKIES_VERSION' ) ) define( 'WPCOOKIES_VERSION', '1.3.0' );
+if( !defined( 'WPCOOKIES_VERSION' ) ) define( 'WPCOOKIES_VERSION', '1.4.0' );
 
 /* The directory name of the plugin */
 if( !defined( 'WPCOOKIES_PATH' ) ) define( 'WPCOOKIES_PATH', dirname ( dirname( __FILE__ ) ) );
