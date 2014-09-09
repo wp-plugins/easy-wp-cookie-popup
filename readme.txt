@@ -1,10 +1,10 @@
 === Easy WordPress Cookies Popup ===
 Contributors: jcpeden
-Donate link: http://www.wpbackitup.com
+Donate link: johncpeden.com/plugins/easy-wordpress-cookies-popup
 Tags: cookie, cookies, cookie law, cookie popup, cookie notification
 Requires at least: 3.5.2
 Tested up to: 4.0.0
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 
 Easy WordPress Cookies Popup allows you to quickly and easily create a notification that your site uses cookies.
 
@@ -37,6 +37,9 @@ The plugin is simple to install:
 1. Customise your cookie notification message and position for your WordPress site.
 
 == Changelog ==
+
+= 1.4.1 =
+* Fixed donation link
 
 = 1.4.0 =
 * Enhanced admin section of the plugin.
