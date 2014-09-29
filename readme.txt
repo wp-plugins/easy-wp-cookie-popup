@@ -4,7 +4,7 @@ Donate link: johncpeden.com/plugins/easy-wordpress-cookies-popup
 Tags: cookie, cookies, cookie law, cookie popup, cookie notification
 Requires at least: 3.5.2
 Tested up to: 4.0.0
-Stable tag: 1.4.1
+Stable tag: 1.5
 
 Easy WordPress Cookies Popup allows you to quickly and easily create a notification that your site uses cookies.
 
@@ -16,8 +16,8 @@ Easy WordPress Cookies Popup displays a fully-customised popup that notifies new
 = Only Display To New Visitors =
 Easy WordPress Cookies Popup displays its notification only to new visitors to your site. A user doesn't have to accept your policy by clicking anywhere. If they stay on your site it is assumed they have read your cookies notification message, accept your cookie policy and therefore no longer need to see the cookie notification message. Using a simple piece of javascript, Easy WordPress Cookies Popup will only display to new visitors or visitors who have cleared their cookies since last visiting.
 
-= Totally Customise Your WordPress Cookie Notification Message =
-For a small upgrade of $24, Easy WordPress Cookies Popup allows you to totally customise the apperance and style of your notification message. Additionally, the premium version also supports multiple language cookie notification messages using <a href="http://wpml.org/">WPML</a>. You can upgrade at any time through the plugin administrative interface or by following this link to <a href="http://johncpeden.com/plugins/easy-WordPress-cookies-popup">download the premium version of Easy WordPress Cookies Popup</a>.
+= Translate Your WordPress Cookie Notification Message =
+Easy WordPress Cookies Popup supports multiple language cookie notification messages using <a href="http://wpml.org/">WPML</a>. 
 
 == Screenshots ==
 1. If WPML is installed, Easy WordPress Cookies Popup will display options for each of your configured languages.
@@ -37,6 +37,9 @@ The plugin is simple to install:
 1. Customise your cookie notification message and position for your WordPress site.
 
 == Changelog ==
+
+= 1.5 =
+* Made plugin totally free again.
 
 = 1.4.1 =
 * Fixed donation link
