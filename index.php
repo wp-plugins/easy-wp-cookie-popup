@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Easy Wordpress Cookies Popup
-Plugin URI: http://www.johncpeden.com/plugins/easy-wordpress-cookies-popup
-Description: Display a popup notification that your Wordpress site uses cookies.
-Version: 1.5
-Author: John Peden
-Author URI: http://www.johncpeden.com
+Plugin URI: https://wordpress.org/plugins/easy-wp-cookie-popup/
+Description: Display a cookie notification message on your WordPress site
+Version: 1.5.1
+Author: Tweak Digital
+Author URI: http://www.tweakdigital.co.uk
 License: GPL3
 
 Copyright 2013 John Peden  (email : mail@johncpeden.com)

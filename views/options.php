@@ -10,7 +10,7 @@
 
     <div class="config-wrap">
 
-        <p>Easy WordPress Cookies Popup allows you to quickly and easily create a notification that your site uses cookies. Just enter your message below and choose where you want to display it on your site.</p>
+        <p><?php _e('Enter your message below and choose where you want to display it on your site.', $namespace); ?></p>
 
           <?php //Load WPML translations if they exist
     if ( function_exists ('icl_get_languages') ) {
@@ -88,8 +88,19 @@
 
     <div id="sidebar">
         <div class="widget">
-            <h2 class="promo"><?php _e('Need support?', $namespace); ?></h2>
-            <p><?php _e('If you are having problems with this plugin please talk about them in the', $namespace); ?> <a href="http://wordpress.org/support/plugin/wordpress-cookies"><?php _e('support forum', $namespace); ?></a>.</p>
+            <h2 class="promo"><?php _e('Ready to Upgrade?', $namespace); ?></h2>
+            <ul>
+	            <li><?php _e('Premium 24/7 Support', $namespace); ?></li>
+	            <li><?php _e('Translate your cookie notification message using WPML', $namespace); ?></li>
+	            <li><?php _e('Customise the styles, timing and positioning of your cookie popup', $namespace); ?></li>
+	            <li><?php _e('100% money-back refund if you aren\'t happy', $namespace); ?></li>
+	            <li><?php _e('Upgrade instantly for just $3/month', $namespace); ?></li>
+            </ul>
+            <p><a class="button-primary" href="http://wpcookiespopup.com"><?php _e('Upgrade Now', $namespace); ?></a></p>
+        </div>
+        <div class="widget">
+            <h2 class="promo"><?php _e('Need Help?', $namespace); ?></h2>
+            <p><?php _e('Please raise any issues with this plugin in the', $namespace); ?> <a href="https://wordpress.org/support/plugin/easy-wp-cookie-popup"><?php _e('support forum', $namespace); ?></a>.</p>
         </div>
     </div>
     </form>
