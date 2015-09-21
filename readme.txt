@@ -1,5 +1,5 @@
 === Easy WordPress Cookies Popup ===
-Contributors: jcpeden, tweakdigital
+Contributors: tweakdigital
 Donate link: http://wpcookiespopup.com
 Tags: cookie, cookies, cookie law, cookie popup, cookie notification
 Requires at least: 3.5.2
